@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".module.show.TodoListShow"
+    tools:showIn="@layout/activity_todo_list_show">
+
+    <!--Input Name Task-->
+    <ImageView
+        android:id="@+id/form_name_ic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="37dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/form_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/form_name"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintLeft_toRightOf="@+id/form_name_ic"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/form_name_pt"
+        android:layout_width="361dp"
+        android:layout_height="43dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Tap to Add"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorWarning"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="@+id/form_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/form_name_tv" />
+
+    <View
+        android:id="@+id/line1_vw"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorGray"
+        app:layout_constraintLeft_toLeftOf="@id/form_name_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_name_pt" />
+
+
+    <!--Input Notes Task-->
+    <ImageView
+        android:id="@+id/form_notes_ic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_note_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/line1_vw"/>
+
+    <TextView
+        android:id="@+id/form_notes_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/form_notes"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintLeft_toRightOf="@+id/form_notes_ic"
+        app:layout_constraintTop_toTopOf="@id/line1_vw"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/form_notes_pt"
+        android:layout_width="361dp"
+        android:layout_height="43dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Tap to Add"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorWarning"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="@+id/form_notes_tv"
+        app:layout_constraintTop_toBottomOf="@+id/form_notes_tv" />
+
+    <View
+        android:id="@+id/line2_vw"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorGray"
+        app:layout_constraintLeft_toLeftOf="@id/form_notes_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_notes_pt" />
+
+
+    <!--Input Due Date Task-->
+    <ImageView
+        android:id="@+id/form_due_date_ic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:contentDescription="TODO"
+        android:src="@drawable/ic_date_range"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/line2_vw"/>
+
+    <TextView
+        android:id="@+id/form_due_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/form_due_date"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintLeft_toRightOf="@+id/form_due_date_ic"
+        app:layout_constraintTop_toTopOf="@id/line2_vw"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/form_due_date_pt"
+        android:layout_width="361dp"
+        android:layout_height="43dp"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Tap to Add (dd-mm-yyyy)"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorGray"
+        android:textColorLink="@color/colorWarning"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp"
+        android:typeface="sans"
+        app:layout_constraintStart_toStartOf="@+id/form_due_date_tv"
+        app:layout_constraintTop_toBottomOf="@+id/form_due_date_tv" />
+
+    <View
+        android:id="@+id/line3_vw"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorGray"
+        app:layout_constraintLeft_toLeftOf="@id/form_due_date_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_due_date_pt" />
+
+
+    <!--Input Status Task-->
+    <RadioButton
+        android:id="@+id/completed_rb"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line3_vw" />
+
+    <TextView
+        android:id="@+id/form_status_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/form_complete"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/line3_vw"
+        app:layout_constraintStart_toEndOf="@id/completed_rb"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="54dp" />
+
+    <View
+        android:id="@+id/line4_vw"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorGray"
+        app:layout_constraintLeft_toLeftOf="@id/form_status_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/form_status_tv" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/update_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_check"
+        app:backgroundTint="@color/colorWarning"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

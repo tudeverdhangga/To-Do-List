@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">To Do List</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="form_name">Task Name</string>
+    <string name="form_due_date">Due Date</string>
+    <string name="form_notes">Notes</string>
+    <string name="form_complete">Completed</string>
+    <string name="title_activity_todo_list_show">TodoListShow</string>
+</resources>
