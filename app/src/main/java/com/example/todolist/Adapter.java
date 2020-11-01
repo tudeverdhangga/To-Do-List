@@ -15,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.TodoViewHolder>{
     private List<ToDo> todo = new ArrayList<>();
+    private static MyClickListener myClickListener;
+
+    public Adapter(ArrayList<ToDo> data) {
+        todo = data;
+    }
 
     @NonNull
     @Override
@@ -43,7 +48,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TodoViewHolder>{
         notifyDataSetChanged();
     }
 
-    static class TodoViewHolder extends RecyclerView.ViewHolder {
+    public void setOnItemClickListener(MyClickListener myClickListener) {
+        this.myClickListener = myClickListener;
+    }
+
+    public interface MyClickListener {
+        public void onItemClick(int position, View v);
+    }
+
+    static class TodoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView title;
         private TextView notes;
@@ -54,6 +67,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.TodoViewHolder>{
             title = itemView.findViewById(R.id.title_tv);
             notes = itemView.findViewById(R.id.notes_tv);
             due_date = itemView.findViewById(R.id.due_date_tv);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position =getAdapterPosition();
+            myClickListener.onItemClick(position, v);
         }
     }
 }

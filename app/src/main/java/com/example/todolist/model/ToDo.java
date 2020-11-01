@@ -1,15 +1,25 @@
 package com.example.todolist.model;
 
 public class ToDo {
+    private String id;
     private String title;
     private String due_date;
     private String notes;
     private String status;
 
-    public ToDo(String title, String due_date, String notes) {
+    public ToDo(String id, String title, String due_date, String notes) {
+        this.id = id;
         this.title = title;
         this.due_date = due_date;
         this.notes = notes;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

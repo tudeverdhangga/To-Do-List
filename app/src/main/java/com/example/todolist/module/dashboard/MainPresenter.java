@@ -1,31 +1,24 @@
 package com.example.todolist.module.dashboard;
 
-import android.view.View;
-import android.widget.TextView;
-
-import com.example.todolist.Adapter;
-import com.example.todolist.db.DB;
 import com.example.todolist.model.ToDo;
 
 import java.util.ArrayList;
 
-public class MainPresenter{
+public class MainPresenter implements MainContract.Presenter{
+    private final MainContract.View view;
 
-
-    public String setData(Adapter adapter) {
-        ArrayList<ToDo> toDoList = DB.getInstance().getDb();
-
-        if (toDoList.size() == 0) {
-            return "Task is Empty";
-        }
-
-        adapter.updateData(toDoList);
-        return "";
+    public MainPresenter(MainContract.View view) {
+        this.view = view;
     }
 
-    public int taskShow(View title) {
-        TextView task = (TextView) title;
-        int i = (int) task.getTag();
-        return i;
+    @Override
+    public void start() {}
+
+    @Override
+    public ArrayList<ToDo> getDataSet() {
+        ArrayList<ToDo> data = new ArrayList<>();
+        data.add(new ToDo("1", "Activity 1", "25 Nov 2020", "Kerjakan task 1"));
+        data.add(new ToDo("2", "Activity 2", "12 Nov 2020", "Kerjakan task 2"));
+        return data;
     }
 }
