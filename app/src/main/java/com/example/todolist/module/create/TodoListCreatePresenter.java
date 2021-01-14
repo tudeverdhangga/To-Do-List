@@ -14,7 +14,7 @@ public class TodoListCreatePresenter implements TodoListCreateContract.Presenter
 
     @Override
     public void saveData(String task_name, String notes, String due_date) {
-        ToDo task = new ToDo("3", "Activity New", "20 Nov 2020", "Kerjakan Activity 3");
+        ToDo task = new ToDo("Activity New", "20 Nov 2020", "Kerjakan Activity 3");
         view.redirectToTaskList();
     }
 }

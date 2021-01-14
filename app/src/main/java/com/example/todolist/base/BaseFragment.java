@@ -6,11 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.todolist.R;
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+
+import com.example.todolist.R;
 
 
 public abstract class BaseFragment<T extends FragmentActivity, U extends BasePresenter> extends Fragment {
@@ -23,7 +23,6 @@ public abstract class BaseFragment<T extends FragmentActivity, U extends BasePre
 
     protected void setTitle(String title){
         this.title = title;
-        fragmentListener.setTitle(title);
     }
 
     protected String getTitle() {

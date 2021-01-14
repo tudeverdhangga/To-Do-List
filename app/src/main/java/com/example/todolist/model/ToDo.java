@@ -1,14 +1,18 @@
 package com.example.todolist.model;
 
-public class ToDo {
+import java.io.Serializable;
+
+public class ToDo implements Serializable {
     private String id;
     private String title;
     private String due_date;
     private String notes;
     private String status;
 
-    public ToDo(String id, String title, String due_date, String notes) {
-        this.id = id;
+    public ToDo() {
+    }
+
+    public ToDo(String title, String due_date, String notes) {
         this.title = title;
         this.due_date = due_date;
         this.notes = notes;

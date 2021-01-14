@@ -17,8 +17,8 @@ public class MainPresenter implements MainContract.Presenter{
     @Override
     public ArrayList<ToDo> getDataSet() {
         ArrayList<ToDo> data = new ArrayList<>();
-        data.add(new ToDo("1", "Activity 1", "25 Nov 2020", "Kerjakan task 1"));
-        data.add(new ToDo("2", "Activity 2", "12 Nov 2020", "Kerjakan task 2"));
+        data.add(new ToDo("Activity 1", "25 Nov 2020", "Kerjakan task 1"));
+        data.add(new ToDo("Activity 2", "12 Nov 2020", "Kerjakan task 2"));
         return data;
     }
 }

@@ -3,6 +3,7 @@ package com.example.todolist.module.show;
 import com.example.todolist.base.BasePresenter;
 import com.example.todolist.base.BaseView;
 import com.example.todolist.model.ToDo;
+import com.google.firebase.database.DatabaseReference;
 
 public interface TodoListShowContract {
     interface View extends BaseView<Presenter> {
@@ -12,8 +13,8 @@ public interface TodoListShowContract {
     }
 
     interface Presenter extends BasePresenter {
-        void saveData(String task_name, String notes, String due_date);
+        void saveData(String id, ToDo task, DatabaseReference mDatabaseReference);
         void loadData(String id);
-        void deleteData(String id);
+        void deleteData(String task, DatabaseReference mDatabaseReference);
     }
 }

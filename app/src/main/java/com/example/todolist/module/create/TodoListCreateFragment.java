@@ -5,21 +5,29 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.example.todolist.R;
 import com.example.todolist.base.BaseFragment;
+import com.example.todolist.model.ToDo;
 import com.example.todolist.module.dashboard.MainActivity;
-
-import androidx.annotation.Nullable;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class TodoListCreateFragment extends BaseFragment<TodoListCreate, TodoListCreateContract.Presenter> implements TodoListCreateContract.View {
 
     private EditText task_name;
     private EditText notes;
     private EditText due_date;
-    private Button btnSave;
+    private FloatingActionButton btnSave;
+    private DatabaseReference mDatabaseReference;
+    private FirebaseDatabase mFirebaseInstance;
 
     public TodoListCreateFragment() {
     }
@@ -43,6 +51,10 @@ public class TodoListCreateFragment extends BaseFragment<TodoListCreate, TodoLis
             }
         });
 
+        FirebaseApp.initializeApp(activity);
+        mFirebaseInstance = FirebaseDatabase.getInstance("https://todolist-c95cc-default-rtdb.firebaseio.com/");
+        mDatabaseReference = mFirebaseInstance.getReference();
+
         return fragmentView;
     }
 
@@ -50,7 +62,15 @@ public class TodoListCreateFragment extends BaseFragment<TodoListCreate, TodoLis
         String task_name_str = task_name.getText().toString();
         String notes_str = notes.getText().toString();
         String due_date_str = due_date.getText().toString();
-        mPresenter.saveData(task_name_str, notes_str, due_date_str);
+        ToDo task = new ToDo(task_name_str, due_date_str, notes_str);
+
+        mDatabaseReference.child("task").push().setValue(task).addOnSuccessListener(activity, new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(activity, "Data barang berhasil di simpan", Toast.LENGTH_SHORT).show();
+                redirectToTaskList();
+            }
+        });
     }
 
     @Override

@@ -7,4 +7,6 @@
     <string name="form_notes">Notes</string>
     <string name="form_complete">Completed</string>
     <string name="title_activity_todo_list_show">TodoListShow</string>
+    <string name="send_task">Send Task</string>
+    <string name="input_email">Input Email</string>
 </resources>

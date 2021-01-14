@@ -2,11 +2,11 @@ package com.example.todolist.base;
 
 import android.os.Bundle;
 
-import com.example.todolist.R;
-
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.todolist.R;
 
 
 public abstract  class BaseActivity extends FragmentActivity implements FragmentListener{
